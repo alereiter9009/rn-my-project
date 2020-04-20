@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import { Text, StyleSheet, View, Image, ScrollView} from 'react-native';
 import ImageHeaderComponent from '../components/ImageHeaderComponent';
 
 const AboutScreen = () => {
@@ -11,6 +11,9 @@ const AboutScreen = () => {
           imageSource={require('../../assets/aboutus.png')}
           header="About" />
       </View>
+      <ScrollView style={{flex: 1, flexDirection: 'column'}} > 
+
+      </ScrollView>
       
     </View>
   );

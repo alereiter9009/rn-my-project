@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, View, Image, Button, TouchableOpacity } from 'react-native';
 
-const TopDishesComponent = ({ imageSource, title, urlLink }) => {
+const ImagesLayoutComponent = ({ imageSource, title, urlLink }) => {
 
 
   return (
@@ -24,9 +24,11 @@ const TopDishesComponent = ({ imageSource, title, urlLink }) => {
           color: '#67cdf5',
           textAlign: 'center',
         }}>{title}</Text>
+        <TouchableOpacity>
         <View style={{backgroundColor: '#ffc382', marginRight: 30, marginLeft: 30, marginTop: 10, marginBottom: 5}}>
           <Text style ={{textAlign: 'center', fontWeight: 'bold'}}onPress={urlLink}>Open on Google</Text>
         </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -34,4 +36,4 @@ const TopDishesComponent = ({ imageSource, title, urlLink }) => {
 
 const styles = StyleSheet.create({});
 
-export default TopDishesComponent;
+export default ImagesLayoutComponent;

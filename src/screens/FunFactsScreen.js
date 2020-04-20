@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import { Text, StyleSheet, View, Image, ScrollView } from 'react-native';
 import ImageHeaderComponent from '../components/ImageHeaderComponent';
 
 const FunFactsScreen = () => {
@@ -11,7 +11,9 @@ const FunFactsScreen = () => {
           imageSource={require('../../assets/didyouknow.jpg')}
           header="About" />
       </View>
-      
+      <ScrollView>
+
+      </ScrollView>
     </View>
   );
 }

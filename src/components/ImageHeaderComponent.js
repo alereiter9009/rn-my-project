@@ -4,7 +4,7 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 const ImageHeaderComponent = ({ imageSource, header }) => {
 
   return (
-    <View style={{flex: 0.65}}>
+    <View style={{flex: 1}}>
       <View style={{ flex: 1 }}>
         <Image
           style={styles.topImageStyle}

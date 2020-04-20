@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
       */}
       <View style={Object.assign({ flex: 0.5 }, styles.buttonsContainer)}>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('MainInfo')}>
-          <Image source={require('../../assets/croppedglobe.png')} />
+          <Image source={require('../../assets/globe.jpg')} />
           <Text style={styles.buttonsText}>Info</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.funFactsStyle} onPress={() => navigation.navigate('FunFacts')}>
@@ -147,7 +147,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#ffffff',
     textAlign: 'center'
-  }
+  }, 
 });
+console.disableYellowBox = true;
 
 export default HomeScreen;

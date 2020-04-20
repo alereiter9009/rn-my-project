@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, View, Image, ScrollView, Linking } from 'react-native';
-import TopDishesComponent from '../components/TopDishesComponent';
+import ImagesLayoutComponent from '../components/ImagesLayoutComponent';
 
 const DishesScreen = () => {
 
@@ -41,57 +41,57 @@ Top Image Component below for Upmost Image laid on this screen
           This is the reusable component I have created that combines View, Text and Image components 
           This component follows best-practice for reducing the amount of repeated code for displaying content*/}
           
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/bulgogi.jpg')}
             title="Bulgogi (Soy-marinated thinly-sliced Beef)"
             urlLink={bulgogiLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/bibimbap.jpg')}
             title="Bibimbap (Mixed rice with meat and vegetables“)"
             urlLink={bibimbapLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/gimbap.jpg')}
             title="Gimbap (Dried Seaweed Rice Rolls)"
             urlLink={gimbapLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/samgyeopsal.jpg')}
             title="Samgyeopsal (Three-layer meat / Pork Belly BBQ)"
             urlLink={samgyeopsalLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/yangnyeomchicken.jpg')}
             title="Yangnyeom Chicken (Spicy Sauce Fried Chicken)"
             urlLink={yangnyeomChickenLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/tteokkbokki.jpg')}
             title="Tteokk-bokki (Spicy Stir-fried Rice Cakes)"
             urlLink={tteokbokkiLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/dakgalbi.jpg')}
             title="Dak-Galbi            (Spicy Stir-fried Chicken)"
             urlLink={dakGalbiLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/dakbokkeumtang.jpg')}
             title="Dakbokkeumtang (Spicy Braised Chicken)"
             urlLink={dakbokkeumtangLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/haemulpajeon.jpg')}
             title="Haemul Pajeon (Seafood Scallion Pancake)"
             urlLink={haemulPajeonLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/japchae.jpg')}
             title="Japchae (Stir-fried Glass Noodles with Vegetables)"
             urlLink={japchaeLink}
           />
-          <TopDishesComponent
+          <ImagesLayoutComponent
             imageSource={require('../../assets/kimchifriedrice.jpg')}
             title="Kimchi Bokkeumbap (Kimchi Fried Rice)"
             urlLink={kimchiLink}
@@ -128,5 +128,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   }
 });
+
 
 export default DishesScreen;
