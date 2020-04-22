@@ -1,0 +1,9 @@
+When displaying content, run into issue with the layout of views. Found out the default behaviour of react-native is column as opposed to row. 
+Struggled in resizing image to fit the desired view, found out a way around it by defining width and height "null" and resizeMode "stretch". 
+When applying styles ran into the issue of having to figure out how to apply multiple styles to one single component. Fixed with the use of arrays of objects. 
+When coding the MainInfoScreen that worked with an API, couldn't manage to display the data properly. Had to google it to find out i needed to use JSON.stringify.Also had to make a few changed to the fetch method with the use of react hooks.  
+Had to research how to apply multiple inline styles to Text components, learned the concept of nesting them with the desired styling. 
+stackNavigator wasn't working after having worked in the past, research to find out there was an update and its name changed. Uninstalled everything and installed, updated the names to fix the issue. 
+Had to research how to style stackNavigatorHeader, found out I was using the wrong object name. 
+Had to research how to redirect user to URL links on default browser, found out the best way was using Linking method. 
+Had to create a customised component in order to decrease the amount of typed code, passing props proved to be tricky at first. 
