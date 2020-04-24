@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Image, ScrollView, Linking } from 'react-native
 import ImagesLayoutComponent from '../components/ImagesLayoutComponent';
 
 const DishesScreen = () => {
-
+//All Linking methods assigning the desired links to functions to be later called inside components
   const kimchiLink = () => { Linking.openURL('https://www.google.com/search?q=Kimchi+Bokkeumbap');};
   const bulgogiLink = () => { Linking.openURL('https://www.google.com/search?q=Bulgogi');};
   const bibimbapLink = () => { Linking.openURL('https://www.google.com/search?q=Bibimbap');};

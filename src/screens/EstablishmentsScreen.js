@@ -4,7 +4,7 @@ import ImagesLayoutComponent from '../components/ImagesLayoutComponent';
 import ImageHeaderComponent from '../components/ImageHeaderComponent';
 
 const EstablishmentsScreen = () => {
-
+// All Linking methods assigned to functions to be later called inside components onPress
   const hwaseongLink = () => { Linking.openURL('https://www.google.com/search?q=Hwaseong+Fortress'); };
   const changdeokgungLink = () => { Linking.openURL('https://www.google.com/search?q=Changdeokgung+Palace'); };
   const bulguksaLink = () => { Linking.openURL('https://www.google.com/search?q=Bulguksa'); };

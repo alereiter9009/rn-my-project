@@ -5,6 +5,7 @@ import { StyleSheet, View, Dimensions} from 'react-native';
 const MapScreen = () => {
 
   return (
+    //Main Screen Container with a MapView component responsible for displaying the location of South Korea on the map
     <View style={styles.container}>
       <MapView style={styles.mapStyle} 
           initialRegion={{

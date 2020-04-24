@@ -45,7 +45,7 @@ const FunFactsScreen = () => {
       </View>
       {/*Scrollable Container */}
       <ScrollView style={styles.scrollContainerStyle}>
-        {/*Calling customised components for displaying Header title as well as Facts Descrition with variables holding the state */}
+        {/*Calling customised components for displaying Header title as well as Facts Description with variables holding the state */}
         <FactsComponent header="Fact#1" factDescription={funOneFact}/>
         <FactsComponent header="Fact#2" factDescription={funTwoFact}/>
         <FactsComponent header="Fact#3" factDescription={funThreeFact}/>

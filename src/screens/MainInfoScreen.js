@@ -20,7 +20,7 @@ const MainInfoScreen = () => {
       .then((response) => response.json())
       .then((json) => setData(json)) //using setter for storing the data of json, never the actual data variable
       .catch((error) => console.error(error)) //error handler
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false)); //setting state as false so loading icon may be shown before the API content is loaded on the screen
   });
 
   return (
@@ -40,22 +40,22 @@ Top Image Component bellow for Upmost Image laid on this screen
       <View style={{backgroundColor: '#ff8cb1'}}>
         <Text style={styles.headerText}>Country Information</Text></View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={{ flex: 1, flexDirection: 'column' ,borderRightWidth: 2, borderRightColor: '#ff8cb1',}}>
+        <View style={{ flex: 1, flexDirection: 'column' ,}}>
           <Image
             style={styles.koreaImageStyle}
             source={require('../../assets/transparentkorea.png')}
           />
         </View>
         {/*
-        ActivityIndicator component used for displaying loading action for API's data
+        ActivityIndicator component used for displaying loading action for API's data coupled with the state of isLoading that was set as false beforehand
         */}
         <View style={{ flex: 1, flexDirection: 'column'}}>
           {isLoading ? <ActivityIndicator /> : (
             //FlatList Component used for displaying lists of items
             <FlatList
               data={data}
-              keyExtractor={({ id }, index) => id}
-              renderItem={({ item }) => (
+              keyExtractor={({ id }, index) => id} //extracting a key to aid variables to be mapped when rendering components
+              renderItem={({ item }) => ( // rendering the item(data)
                 <View style={styles.apiContainerStyle}>
                   {/* 
                   Workaround on FlatList with multiple Text components for displaying fetched data
@@ -94,8 +94,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#67cdf5', 
-    paddingVertical: 3.5, 
+    paddingBottom: 3.5,
+    paddingTop: 3, 
     paddingLeft: 4,
+    borderBottomWidth: 2,
+    borderBottomColor: 'rgba(219, 215, 215, .35)'
   },
   apiTextNormal: {
     fontSize: 20, 

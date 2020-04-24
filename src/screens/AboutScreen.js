@@ -2,13 +2,15 @@ import React from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity, Linking, } from 'react-native';
 
 const AboutScreen = () => {
-
+  //Links being assigned to functions for later calling inside components
   const contactLink = () => { Linking.openURL('https://www.linkedin.com/in/alexander-reiter'); };
   const emailLink = () => { Linking.openURL('mailto:alereiter9009@gmail.com?subject=Korify'); };
   return (
+    //Screen Container
     <View style={{ flex: 1 }}>
       <View style={styles.backgroundHeaderContainer}>
       </View>
+      {/*Image container with profile image component inside */}
       <View
         style={styles.headerImagePosition}>
         <Image
@@ -16,25 +18,32 @@ const AboutScreen = () => {
           source={require('../../assets/alexander.png')}
         />
       </View>
+      {/* Buttons Container */}
       <View style={styles.buttonsViewMainContainer}>
+        {/* Touchable Component to add user feedback when component is clicked */}
         <TouchableOpacity style={styles.buttonsLayoutAdjust}>
           <View style={styles.contactButtonContainer}>
+            {/* Contact text component that calls contactLink function to redirect app user to my linkedin profile */}
             <Text style={styles.contactTextStyle} onPress={contactLink}>CONTACT</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonsLayoutAdjust}>
           <View style={styles.contactButtonContainer}>
+            {/* Email text component that calls emaillink function to redirect app user to their e-mail application with my e-mail as the recipient */}
             <Text style={styles.contactTextStyle} onPress={emailLink}>E-MAIL</Text>
           </View>
         </TouchableOpacity>
       </View>
       <View style={styles.fullNameTextContainer}>
+        {/* Centered text component with my full name and Place of Birth */}
         <Text style={styles.fullNameTextStyle}>Alexander Reiter, 26</Text>
         <Text style={styles.cityTextStyle}>Sao Paulo, Brazil</Text>
       </View>
+      {/* View component with a text component containing a brief paragraph */}
       <View style={styles.appDescriptionContainer}>
         <Text style={styles.appDescriptionTextStyle}>This Application has been developed by a student for academic purposes on College of Computing and Technology</Text>
       </View>
+      {/* CCTImage View component with the attached image to it.  */}
       <View style={styles.cctImgContainer}>
         <Image
           style={styles.cctImgStyle}
@@ -44,7 +53,7 @@ const AboutScreen = () => {
     </View>
   );
 }
-
+//Styles object with all styles being declared. Previously were assigned to their respective components
 const styles = StyleSheet.create({
   backgroundHeaderContainer: {
     flexDirection: 'row',
