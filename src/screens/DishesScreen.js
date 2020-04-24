@@ -115,18 +115,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     width: null,
   },
-  dishesImagesStyle: {
-    flex: 1,
-    height: null,
-    resizeMode: 'contain',
-    width: null,
-  },
-  dishesTextStyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#67cdf5',
-    textAlign: 'center'
-  }
+
 });
 
 

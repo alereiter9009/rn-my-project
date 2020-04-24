@@ -37,15 +37,3 @@ const styles = StyleSheet.create({
 });
 
 export default ImageHeaderComponent;
-
-/*
-      <View style={{ flex: 0.55 }}>
-        <Image
-          style={styles.topImageStyle}
-          source={imageSource}
-        />
-      </View>
-      <View style={styles.headerColor}>
-        <Text style={styles.headerText}>{title}</Text>
-      </View>
-      */

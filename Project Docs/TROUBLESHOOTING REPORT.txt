@@ -7,3 +7,7 @@ stackNavigator wasn't working after having worked in the past, research to find 
 Had to research how to style stackNavigatorHeader, found out I was using the wrong object name. 
 Had to research how to redirect user to URL links on default browser, found out the best way was using Linking method. 
 Had to create a customised component in order to decrease the amount of typed code, passing props proved to be tricky at first. 
+Unfortunately I was unable to find an API that would supply me with the data that I am looking for, for the remaining two screens of my app called CultureAspects and FunFacts. Had to research a database to use in order to fetch such data and display it on those screens. 
+Has struggled to manage to create an appropriate formatted JSON file in order to import data to database. Reading the documentation as well as using a json formatter tool coupled by using a website for JSON parsing helped me solve that issue.
+Having difficulty installing modules required for connecting my application to the database of firebase. Going through their docs and troubleshooting on google. 
+ 

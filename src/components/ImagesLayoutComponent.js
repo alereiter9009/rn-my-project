@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'row', 
     borderBottomWidth: 2,
+    borderBottomColor: '#ff8cb1',
   },
   imageDishesContainer: {
     flex: 1, 
@@ -49,15 +50,16 @@ const styles = StyleSheet.create({
   imageDescriptionText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#67cdf5',
+    color: '#ADADAD',
     textAlign: 'center',
+    marginTop: 6
   }, 
   googleButtonContainer: {
     backgroundColor: '#ffc382', 
     marginRight: 30, 
     marginLeft: 30, 
-    marginTop: 10, 
-    marginBottom: 5, 
+    marginTop: 6, 
+    marginBottom: 8, 
     borderWidth: 2, 
     borderRadius: 20, 
     borderColor: '#ffc382', 

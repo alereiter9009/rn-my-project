@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
 import { Text, StyleSheet, View, ActivityIndicator, FlatList, Image } from 'react-native';
 
 
@@ -42,7 +40,7 @@ Top Image Component bellow for Upmost Image laid on this screen
       <View style={{backgroundColor: '#ff8cb1'}}>
         <Text style={styles.headerText}>Country Information</Text></View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={{ flex: 1, flexDirection: 'column' }}>
+        <View style={{ flex: 1, flexDirection: 'column' ,borderRightWidth: 2, borderRightColor: '#ff8cb1',}}>
           <Image
             style={styles.koreaImageStyle}
             source={require('../../assets/transparentkorea.png')}
@@ -58,7 +56,7 @@ Top Image Component bellow for Upmost Image laid on this screen
               data={data}
               keyExtractor={({ id }, index) => id}
               renderItem={({ item }) => (
-                <View style={{ marginTop: 30 }}>
+                <View style={styles.apiContainerStyle}>
                   {/* 
                   Workaround on FlatList with multiple Text components for displaying fetched data
                   Not optimal but does what is needed
@@ -72,7 +70,7 @@ Top Image Component bellow for Upmost Image laid on this screen
                   <Text key={JSON.stringify(item.population)}style={styles.apiText}>Population : <Text style={styles.apiTextNormal}>{JSON.stringify(item.population).slice(0, -6)} Mil</Text></Text>
                   <Text key={JSON.stringify(item.latlng)}style={styles.apiText}>Latitude : <Text style={styles.apiTextNormal}>{JSON.stringify(item.latlng).slice(1, -7)}</Text></Text>
                   <Text key={JSON.stringify(item.latlng).slice(1,-1)}style={styles.apiText}>Longitude : <Text style={styles.apiTextNormal}>{JSON.stringify(item.latlng).slice(4, -1)}</Text></Text>
-                  <Text key={JSON.stringify(item.timezones[0])}style={styles.apiText}>Timezone : <Text style={styles.apiTextNormal}>{JSON.stringify(item.timezones[0]).slice(1, -1)}</Text></Text>
+                  <Text key={JSON.stringify(item.timezones[0])}style={styles.apiText}>Time : <Text style={styles.apiTextNormal}>{JSON.stringify(item.timezones[0]).slice(1, -1)}</Text></Text>
                 </View>
               )}
             />
@@ -85,10 +83,19 @@ Top Image Component bellow for Upmost Image laid on this screen
 
 
 const styles = StyleSheet.create({
+  apiContainerStyle: {
+    marginTop: 10, 
+    flex: 1, 
+    flexDirection: 'column', 
+    flexWrap: 'wrap', 
+    paddingTop: 8, 
+  },
   apiText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#67cdf5'
+    color: '#67cdf5', 
+    paddingVertical: 3.5, 
+    paddingLeft: 4,
   },
   apiTextNormal: {
     fontSize: 20, 
