@@ -7,7 +7,7 @@ const AboutScreen = () => {
   const emailLink = () => { Linking.openURL('mailto:alereiter9009@gmail.com?subject=Korify'); };
   return (
     //Screen Container
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, justifyContent: 'space-between' }}>
       <View style={styles.backgroundHeaderContainer}>
       </View>
       {/*Image container with profile image component inside */}
@@ -35,9 +35,12 @@ const AboutScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.fullNameTextContainer}>
+        <View style={{alignSelf: 'center'}}>
         {/* Centered text component with my full name and Place of Birth */}
-        <Text style={styles.fullNameTextStyle}>Alexander Reiter, 26</Text>
-        <Text style={styles.cityTextStyle}>Sao Paulo, Brazil</Text>
+        <Text style={styles.fullNameTextStyle}>Alexander Reiter, 26{"\n"}
+        <Text style={styles.cityTextStyle}>São Paulo, Brazil</Text></Text>
+        
+        </View>
       </View>
       {/* View component with a text component containing a brief paragraph */}
       <View style={styles.appDescriptionContainer}>
@@ -56,20 +59,23 @@ const AboutScreen = () => {
 //Styles object with all styles being declared. Previously were assigned to their respective components
 const styles = StyleSheet.create({
   backgroundHeaderContainer: {
+    flex: 1,
     flexDirection: 'row',
     backgroundColor: '#67cdf5',
     height: 115
   },
   headerImagePosition: {
+    flex: 1,
     position: 'absolute',
-    top: 35,
-    left: 100,
+    top: '+3%',
+    left: 0,
     right: 0,
     bottom: 0,
   },
   imageStyle: {
-    height: 150,
-    width: 150,
+    height: '26.8%',
+    width: '43.2%',
+    alignSelf: 'center', 
   },
   buttonsViewMainContainer: {
     borderBottomWidth: 1, 
@@ -96,31 +102,34 @@ const styles = StyleSheet.create({
     padding: 2,
   },
   fullNameTextContainer: {
-    flexDirection: 'row', 
-    height: 100, 
-    flexWrap: 'wrap', 
+    flexDirection: 'column', 
+    height: '17%',  
     justifyContent: 'center', 
     borderBottomWidth: 1, 
     borderBottomColor: '#dddddd', 
-    paddingTop: 15,
   }, 
   fullNameTextStyle: {
     fontSize: 30, 
     alignSelf: 'center', 
+    textAlign: 'center'
   },
   cityTextStyle: {
     alignSelf: 'center',
+    fontSize: 16, 
+    textAlign: 'center'
   }, 
   appDescriptionContainer: {
     flexWrap: 'wrap', 
     alignItems: 'center', 
-    paddingTop: 25,
+    paddingTop: '9%',
+    justifyContent: 'center'
   }, 
   appDescriptionTextStyle: {
     fontSize: 15, 
     color: '#aaaaaa', 
-    margin: 20, 
-    textAlign: 'center' 
+    margin: '7%', 
+    textAlign: 'center' , 
+    alignSelf: 'center'
   }, 
   cctImgContainer: {
     flexWrap: 'wrap', 
@@ -132,6 +141,7 @@ const styles = StyleSheet.create({
     height: 150, 
     width: 350, 
     resizeMode: 'contain', 
+
   }
 
 

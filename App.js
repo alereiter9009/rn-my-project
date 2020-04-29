@@ -9,8 +9,10 @@ import AboutScreen from './src/screens/AboutScreen';
 import DishesScreen from './src/screens/DishesScreen';
 import MapScreen from './src/screens/MapScreen';
 import * as firebase from 'firebase';
+import {StatusBar} from 'react-native';
 
-
+//Method for changing the color of the status bar
+StatusBar.setBackgroundColor('rgba(255, 255, 255, 0.3)');
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyA4PQG58e_lhDnqr2IIBJGi9_FuQCCjLik",
@@ -45,28 +47,22 @@ const navigator = createStackNavigator(
   },
   {
     /*
-    These are basically where you can configure the styling of your App headers as well as pointing to the default page
+    These are basically where you can configure the styling of your App headers and default page
     */
     initialRouteName: 'Home',
     defaultNavigationOptions: {
       title: 'Korify', 
       headerStyle: {
-        backgroundColor: '#67cdf5',
+        backgroundColor: 'black', 
+        
       },
+      headerTintColor: 'white',
       headerTitleStyle: {
         fontWeight: 'bold', 
+        color: 'white',
       }, 
     },
   },
 );
 
 export default createAppContainer(navigator);
-
-
-/*
-For Centering header Title of Application
-
-        headerTitleAlign: {
-        headerTitleAlign: 'center'
-      }
-*/

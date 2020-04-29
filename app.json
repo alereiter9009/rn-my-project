@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "rn-my-project",
-    "slug": "rn-my-project",
+    "name": "Korify",
+    "slug": "Korify",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "4.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/letterK.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -22,7 +22,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.alexander.korify", 
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.alexander.korify",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAdjeZoLKkYyFZ-UwwpO8zGFSWAd9ajQGo"
+        }
+      }
     }
   }
 }

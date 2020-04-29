@@ -10,4 +10,17 @@ Had to create a customised component in order to decrease the amount of typed co
 Unfortunately I was unable to find an API that would supply me with the data that I am looking for, for the remaining two screens of my app called CultureAspects and FunFacts. Had to research a database to use in order to fetch such data and display it on those screens. 
 Has struggled to manage to create an appropriate formatted JSON file in order to import data to database. Reading the documentation as well as using a json formatter tool coupled by using a website for JSON parsing helped me solve that issue.
 Having difficulty installing modules required for connecting my application to the database of firebase. Going through their docs and troubleshooting on google. 
- 
+Building the android build proved to be tricky at first, after some research noticed I had to modify the app.json and add a few details there that were missing. 
+When trying to do the same for IOS, the icon image didn't match the IOS requirements, transparecy had to be removed, but afterwards it was required to publish the app for the app store, so I don't intend to build the IPA file anymore as this app is not suited for publishing on that store, as it uses images whose rights i do not own. 
+Decided to do my best to ensure google maps was working, so tried getting the APIkey but ran into a problem when fetching the android hashes, keytool was not being recognised. Had to troubleshoot, add the environment paths and run cmd as administrator to make it work. 
+Tried building the app for IOS, after quite a lot of errors, finally came into a stalemate where I am unable to proceed any further, as I have to pay a membership to Apple of 99 dollars in order to be able to continue further. So I am afraid I won't have an IOS build. 
+
+TESTING:
+XIAOMI MI A2: 
+During testing on android with the apk file, google maps didn't seem to work anymore, only when testing it locally. After checking the documentation, I've learned I must own an API key for it. In the end, I've acquired it after running into some issues. More information under troubleshooting chapter. 
+XIAOMI REDMI NOTE 8:
+The scaling of the uppermost image on the homescreen wasn't applied appropriately, therefore I will be required to re-do the screen utilizing flexBox alongside with image style properties such as reSize to scale the images appropriately to the parent views height and width. 
+Honour View 20:
+Screen with higher resolution caused Text components of the screen "About" to be on the same line as opposed in two different centered lines. This was fixed using a line break, and nesting the text components on each other. 
+Also profile picture wasn't centered on that device. This was fixed using alignSelf on image style object. 
+MainInfoScreen API content displayed incorrectly. "Time" text component wasn't displayed at the end of the View, instead on the same line as the first Text component "Capital". This was fixed using justifyContent 'center' coupled with flexWrap on style object. 

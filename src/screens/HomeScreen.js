@@ -10,55 +10,60 @@ const HomeScreen = ({ navigation }) => {
   Style may be configured in each component by the use of the component StyleSheet where you create style objects
   */
   return (
-    <View style={styles.container}>
-      <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 2.2 }}>
         <Image
-          style={styles.seoulImage}
-          source={require('../../assets/seoultest.jpg')}
+          style={styles.topImageStyle}
+          source={require('../../assets/seoul.jpg')}
         />
         <View style={styles.imageTextContainer}>
           <Text style={styles.imageText}>South Korea</Text>
         </View>
       </View>
-      {/*
-      Container for the first row of buttons 
-      TouchableOpacity component used as opposed to Button in order to give user feedback when clicked
-      Navigation method is used to navigate to selected screen
-      */}
-      <View style={Object.assign({ flex: 0.5 }, styles.buttonsContainer)}>
-        <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('MainInfo')}>
+      {/*First Row Container for Touchable Buttons*/}
+      <View style={[styles.firstRowButtonContainer ,styles.buttonRowsStyle]}>
+        <View style={styles.infoStyle}>
+        <TouchableOpacity style={styles.selfAligner} onPress={() => navigation.navigate('MainInfo')}>
           <Image source={require('../../assets/globe.jpg')} />
-          <Text style={styles.buttonsText}>Info</Text>
+          <Text style={[styles.infoTextStyle, styles.buttonsText]}>Info</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.funFactsStyle} onPress={() => navigation.navigate('FunFacts')}>
+        </View>
+        <View style={styles.funFactsStyle}>
+        <TouchableOpacity style={Object.assign({paddingLeft: 25}, styles.selfAligner)} onPress={() => navigation.navigate('FunFacts')}>
           <Image source={require('../../assets/croppedsmiley.png')} />
-          <Text style={styles.buttonsText}>Fun Facts</Text>
+          <Text style={[styles.funFactsTextStyle, styles.buttonsText]}>Fun Facts</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.mustVisitStyle} onPress={() => navigation.navigate('Establishments')}>
+        </View>
+        <View style={styles.mustVisitStyle}>
+        <TouchableOpacity style={{paddingLeft: 28}}onPress={() => navigation.navigate('Establishments')}>
           <Image source={require('../../assets/croppedmuseum.png')} />
-          <Text style={styles.buttonsText}>Must Visit</Text>
+          <Text style={[styles.mustVisitTextStyle, styles.buttonsText]}>Must Visit</Text>
         </TouchableOpacity>
+        </View>
       </View>
-      {/*
-      Container for the second row of buttons 
-      TouchableOpacity component used as opposed to Button in order to give user feedback when clicked
-      Navigation method is used to navigate to selected screen
-      */}
-      <View style={[styles.secondRowButtonContainer, styles.buttonsContainer]}>
-        <TouchableOpacity style={styles.culturalAspectStyle} onPress={() => navigation.navigate('CulturalAspects')}>
+
+      {/* Second Row Container for Touchable Buttons*/}
+      <View style={styles.secondRowButtonContainer}>
+        <View style={styles.culturalAspectStyle}>
+        <TouchableOpacity style={Object.assign({paddingLeft: 25}, styles.selfAligner)} onPress={() => navigation.navigate('CulturalAspects')}>
           <Image source={require('../../assets/croppedexclamation.png')} />
-          <Text style={styles.buttonsText}>Culture Aspect</Text>
+          <Text style={[styles.culturalAspectTextStyle, styles.buttonsText]}>Cultural Aspect</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.topDishesStyle} onPress={() => navigation.navigate('Dishes')}>
+        </View>
+        <View style={styles.topDishesStyle}>
+        <TouchableOpacity style={[styles.selfAligner, styles.topDishesButtonStyle]}onPress={() => navigation.navigate('Dishes')}>
           <Image source={require('../../assets/croppednoodle.png')} />
-          <Text style={styles.buttonsText}>Top Dishes</Text>
+          <Text style={[styles.topDishesTextStyle, styles.buttonsText]}>Top Dishes</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.aboutStyle} onPress={() => navigation.navigate('About')}>
+        </View>
+        <View style={styles.aboutStyle} >
+        <TouchableOpacity style={styles.selfAligner}onPress={() => navigation.navigate('About')}>
           <Image source={require('../../assets/croppedabout.png')} />
-          <Text style={styles.buttonsText}>About</Text>
+          <Text style={[styles.aboutTextStyle, styles.buttonsText]}>About</Text>
         </TouchableOpacity>
+        </View>
       </View>
-      <View style={{ backgroundColor: '#ff8cb1' }}>
+      <View style={styles.mapContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Map')}>
           <Text style={styles.googleMapButtonStyle}>Show on Map</Text>
         </TouchableOpacity>
@@ -67,22 +72,22 @@ const HomeScreen = ({ navigation }) => {
 
   );
 }
-//style={Object.assign({ marginRight: "1.5em" }, style)}
 
 // This is the StyleSheet component, used for creating style objects, best-practice as it supports some optimisation
 const styles = StyleSheet.create({
-  container: {
+  topImageStyle: {
     flex: 1,
-    justifyContent: "flex-start",
+    height: null,
+    resizeMode: 'cover',
+    width: null,
   },
-  buttonsContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
+  buttonsText: {
+    color: '#67cdf5',
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
-  seoulImage: {
-    resizeMode: "contain",
-    alignContent: 'stretch'
-  },
+
   imageTextContainer: {
     position: 'absolute',
     top: 0,
@@ -92,62 +97,102 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  buttonsText: {
-    color: '#67cdf5',
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    paddingRight: 25,
-  },
   imageText: {
     color: '#ffff',
     fontSize: 33,
     fontWeight: "bold"
   },
-  culturalAspectStyle: {
+  container: {
     flex: 1,
-    paddingLeft: 25,
-    borderEndWidth: 5,
-    borderRightColor: '#ffffff'
+    justifyContent: "flex-start",
   },
-  topDishesStyle: {
-    flex: 1,
-    paddingLeft: 30
+  buttonRowsStyle: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: 'space-evenly', 
+    borderBottomWidth: 5, 
+    borderBottomColor: '#ffffff', 
+    marginBottom: 40 
   },
-  aboutStyle: {
-    flex: 1,
-    borderLeftWidth: 5,
-    paddingLeft: 20,
-    borderLeftColor: '#ffffff'
+  firstRowButtonContainer: {
+    flex: 1, 
+    paddingTop: 40, 
+    paddingBottom: 50
   },
   secondRowButtonContainer: {
-    flex: 0.55,
-    borderTopWidth: 5,
-    paddingTop: 30,
-    borderTopColor: '#ffffff'
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: 'space-evenly',
+    marginBottom: 10
+  },
+  selfAligner:{
+    alignSelf: 'center'
   },
   infoStyle: {
     flex: 1,
-    paddingLeft: 25,
     borderEndWidth: 5,
     borderEndColor: '#ffffff'
   },
+  infoTextStyle: {
+    paddingTop: 10, 
+    paddingLeft: 3
+  },
   funFactsStyle: {
     flex: 1,
-    paddingLeft: 30
+  },
+  funFactsTextStyle: {
+    marginRight: 10, 
+    paddingRight: 12
   },
   mustVisitStyle: {
     flex: 1,
     borderLeftWidth: 5,
-    paddingLeft: 20,
     borderLeftColor: '#ffffff'
+  },
+  mustVisitTextStyle: {
+    marginLeft: 6, 
+    paddingRight: 25
+  },
+  culturalAspectStyle: {
+    flex: 1,
+    borderEndWidth: 5,
+    borderRightColor: '#ffffff',
+  },
+  culturalAspectTextStyle: {
+    paddingRight: 21
+  },
+  topDishesStyle: {
+    flex: 1,
+  },
+  topDishesButtonStyle: {
+    paddingLeft: 25
+  },
+  topDishesTextStyle: {
+    marginRight: 27
+  }, 
+  aboutStyle: {
+    flex: 1,
+    borderLeftWidth: 5,
+    borderLeftColor: '#ffffff'
+  },
+  aboutTextStyle: {
+    paddingTop: 10
+  },
+  mapContainer: {
+    backgroundColor: '#47a6ff', 
+    flexDirection: 'column', 
+    justifyContent: 'flex-end', 
+    flex: 0.35, 
+    marginTop: 40
   },
   googleMapButtonStyle: {
     fontSize: 25,
     fontWeight: 'bold',
     color: '#ffffff',
-    textAlign: 'center'
-  }, 
+    textAlign: 'center', 
+    
+  },
 });
 console.disableYellowBox = true;
 

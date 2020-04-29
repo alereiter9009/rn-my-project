@@ -88,15 +88,17 @@ const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: 'column', 
     flexWrap: 'wrap', 
-    paddingTop: 8, 
+    alignSelf: 'center', 
+    justifyContent: 'center',
+    paddingRight: '2%' 
   },
   apiText: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#67cdf5', 
-    paddingBottom: 3.5,
-    paddingTop: 3, 
-    paddingLeft: 4,
+    paddingBottom: '3%',
+    paddingTop: '2%', 
+    paddingLeft: '1%',
     borderBottomWidth: 2,
     borderBottomColor: 'rgba(219, 215, 215, .35)'
   },
