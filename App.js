@@ -15,7 +15,7 @@ import {StatusBar} from 'react-native';
 StatusBar.setBackgroundColor('rgba(255, 255, 255, 0.3)');
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyA4PQG58e_lhDnqr2IIBJGi9_FuQCCjLik",
+  apiKey: "",// Insert Api Key Here, Alex check your e-mail
   authDomain: "rn-my-project.firebaseapp.com",
   databaseURL: "https://rn-my-project.firebaseio.com",
   projectId: "rn-my-project",
